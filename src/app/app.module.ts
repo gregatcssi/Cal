@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { MyFilterPipe } from './myfilter.pipe';
+import { GetJsonServiceService } from './get-json-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -12,9 +13,9 @@ import { MyFilterPipe } from './myfilter.pipe';
     MyFilterPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,HttpClientModule
   ],
-  providers: [],
+  providers: [GetJsonServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
