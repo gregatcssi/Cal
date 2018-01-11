@@ -60,14 +60,27 @@ constructor(public dataService:GetJsonServiceService) {
   }
 
   testTheStructure(dd){
-    let jDD={};
-    let jDQ1M ={};
-    jDD=this.groupBy(dd,'Year')
+    console.log(dd);
+    let jDD=this.groupBy(dd,'Year')
     console.log(jDD);
-    jDD=this.groupBy(jDD[this.DisplayYear],'Quarter');
-    console.log(jDD);
-    jDQ1M = this.groupBy(jDD['Q1'],'Month');
+    let JDQ=this.groupBy(jDD[this.DisplayYear],'Quarter');
+    console.log(JDQ);
+    let jDQ1M = this.groupBy(JDQ['Q1'],'Month');
     console.log(jDQ1M )
+    let jDQ2M = this.groupBy(JDQ['Q2'],'Month');
+    console.log(jDQ2M )
+    let jDQ3M = this.groupBy(JDQ['Q3'],'Month');
+    console.log(jDQ3M )
+    let jDQ4M = this.groupBy(JDQ['Q4'],'Month');
+    console.log(jDQ4M )
+
+    
+     
+    // let eResult ={
+    //   year:this.DisplayYear,
+
+    // }
+
   }
   groupBy(obj:Array<any>,prop) {
     return obj.reduce(function(groups, item) {

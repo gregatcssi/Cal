@@ -9,7 +9,14 @@ import{} from '../n-day/n-day.component'
 export class NWeekComponent implements OnInit {
 
   constructor() { }
-
+  Days=['Saturday',
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday'
+]
   ngOnInit() {
   }
 
