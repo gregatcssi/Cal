@@ -9,7 +9,7 @@ import{} from '../n-day/n-day.component'
 export class NWeekComponent implements OnInit {
 
   constructor() { }
-  Days=['Saturday',
+  Days=['QWeek','Week','Saturday',
   'Sunday',
   'Monday',
   'Tuesday',
