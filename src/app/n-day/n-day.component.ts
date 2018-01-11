@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NDayComponent implements OnInit {
 
   constructor() { }
-
+  DispDay='Day'
   ngOnInit() {
   }
 

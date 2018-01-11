@@ -10,7 +10,22 @@ import {GetJsonServiceService} from './get-json-service.service';
 })
 export class AppComponent implements OnInit  {
  Date:any;
-
+ colNames =[
+  "Saturday"
+  ,"Sunday"
+  ,"Monday"
+  ,"Tuesday"
+  ,"Wednesday"
+  ,"Thursday"
+  ,"Friday"]
+  displayColNames=[
+     "DispSa"
+    ,"DispSu"
+    ,"DispMo"
+    ,"DispTu"
+    ,"DispWe"
+    ,"DispTh"
+    ,"DispFr"]
  title = 'app';
  filterYear = {Year: (new Date()).getFullYear()};
  DisplayYear = (new Date()).getFullYear();
@@ -51,35 +66,23 @@ BuildJson(){
     }
     dd[i]["Month"] = dd[i].Title.substr(0,dd[i]["Title"].indexOf(" ",0));
     
-    dd[i]["DispSaturday"]=dd[i].Saturday.substr(dd[i].Saturday.indexOf("/",0)+1,(dd[i].Saturday.lastIndexOf("/")-dd[i].Saturday.indexOf("/")-1));
-    dd[i]["DispSunday"]=dd[i].Sunday.substr(dd[i].Sunday.indexOf("/",0)+1,(dd[i].Sunday.lastIndexOf("/")-dd[i].Sunday.indexOf("/")-1));
-    dd[i]["DispMonday"]=dd[i].Monday.substr(dd[i].Monday.indexOf("/",0)+1,(dd[i].Monday.lastIndexOf("/")-dd[i].Monday.indexOf("/")-1));
-    dd[i]["DispTuesday"]=dd[i].Tuesday.substr(dd[i].Tuesday.indexOf("/",0)+1,(dd[i].Tuesday.lastIndexOf("/")-dd[i].Tuesday.indexOf("/")-1));
-    dd[i]["DispWednesday"]=dd[i].Wednesday.substr(dd[i].Wednesday.indexOf("/",0)+1,(dd[i].Wednesday.lastIndexOf("/")-dd[i].Wednesday.indexOf("/")-1));
-    dd[i]["DispThursday"]=dd[i].Thursday.substr(dd[i].Thursday.indexOf("/",0)+1,(dd[i].Thursday.lastIndexOf("/")-dd[i].Thursday.indexOf("/")-1));
-    dd[i]["DispFriday"]=dd[i].Friday.substr(dd[i].Friday.indexOf("/",0)+1,(dd[i].Friday.lastIndexOf("/")-dd[i].Friday.indexOf("/")-1));
 
-    // dd[i]["DispSa"]=(dd[i]["DispSaturday"]<=10)?"myStyle={'background-color':'lightgray'}" : (dd[i]["DispSaturday"]>10 && dd[i]["DispSaturday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    // dd[i]["DispSu"]=(dd[i]["DispSunday"]<=10)?"myStyle={'background-color':'lightgray'}":(dd[i]["DispSunday"]>10 && dd[i]["DispSunday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    // dd[i]["DispMo"]=(dd[i]["DispMonday"]<=10)?"myStyle={'background-color':'lightgray'}":(dd[i]["DispMonday"]>10 && dd[i]["DispMonday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    // dd[i]["DispTu"]=(dd[i]["DispTuesday"]<=10)?"myStyle={'background-color':'lightgray'}":(dd[i]["DispTuesday"]>10 && dd[i]["DispTuesday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    // dd[i]["DispWe"]=(dd[i]["DispWednesday"]<=10)?"myStyle={'background-color':'lightgray'}":(dd[i]["DispWednesday"]>10 && dd[i]["DispWednesday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    // dd[i]["DispTh"]=(dd[i]["DispThursday"]<=10)?"myStyle={'background-color':'lightgray'}":(dd[i]["DispThursday"]>10 && dd[i]["DispThursday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    // dd[i]["DispFr"]=(dd[i]["DispFriday"]<=10)?"myStyle={'background-color':'lightgray'}":(dd[i]["DispFriday"]>10 && dd[i]["DispFriday"]<=20)?"myStyle={'background-color':'lightgreen'}":"myStyle={'background-color':'rgb(255, 181, 181)'}";
-    dd[i]["DispSa"]=(dd[i]["DispSaturday"]<=10)?'lightgray':(dd[i]["DispSaturday"]>10 && dd[i]["DispSaturday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
-    dd[i]["DispSu"]=(dd[i]["DispSunday"]<=10)?'lightgray':(dd[i]["DispSunday"]>10 && dd[i]["DispSunday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
-    dd[i]["DispMo"]=(dd[i]["DispMonday"]<=10)?'lightgray':(dd[i]["DispMonday"]>10 && dd[i]["DispMonday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
-    dd[i]["DispTu"]=(dd[i]["DispTuesday"]<=10)?'lightgray':(dd[i]["DispTuesday"]>10 && dd[i]["DispTuesday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
-    dd[i]["DispWe"]=(dd[i]["DispWednesday"]<=10)?'lightgray':(dd[i]["DispWednesday"]>10 && dd[i]["DispWednesday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
-    dd[i]["DispTh"]=(dd[i]["DispThursday"]<=10)?'lightgray':(dd[i]["DispThursday"]>10 && dd[i]["DispThursday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
-    dd[i]["DispFr"]=(dd[i]["DispFriday"]<=10)?'lightgray':(dd[i]["DispFriday"]>10 && dd[i]["DispFriday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+   this.colNames.forEach(element => {
+    dd[i][element]=dd[i][element].substr(dd[i][element].indexOf("/",0)+1,(dd[i][element].lastIndexOf("/")-dd[i][element].indexOf("/")-1));
+   });
+   for (let index = 0; index < this.displayColNames.length; index++) {
+    dd[i][this.displayColNames[index]]=(dd[i][this.colNames[index]]<=10)?'lightgray':(dd[i][this.colNames[index]]>10 && dd[i][this.colNames[index]]<=20)?'lightgreen':'rgb(255, 181, 181)';
+   }
 
-
-
-
-
+    // dd[i]["DispSa"]=(dd[i]["Saturday"]<=10)?'lightgray':(dd[i]["Saturday"]>10 && dd[i]["Saturday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+    // dd[i]["DispSu"]=(dd[i]["Sunday"]<=10)?'lightgray':(dd[i]["Sunday"]>10 && dd[i]["Sunday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+    // dd[i]["DispMo"]=(dd[i]["Monday"]<=10)?'lightgray':(dd[i]["Monday"]>10 && dd[i]["Monday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+    // dd[i]["DispTu"]=(dd[i]["Tuesday"]<=10)?'lightgray':(dd[i]["Tuesday"]>10 && dd[i]["Tuesday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+    // dd[i]["DispWe"]=(dd[i]["Wednesday"]<=10)?'lightgray':(dd[i]["Wednesday"]>10 && dd[i]["Wednesday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+    // dd[i]["DispTh"]=(dd[i]["Thursday"]<=10)?'lightgray':(dd[i]["Thursday"]>10 && dd[i]["Thursday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
+    // dd[i]["DispFr"]=(dd[i]["Friday"]<=10)?'lightgray':(dd[i]["Friday"]>10 && dd[i]["Friday"]<=20)?'lightgreen':'rgb(255, 181, 181)';
   } 
-  console.log(dd);
+
   return  dd;
 }
 

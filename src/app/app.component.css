@@ -1,5 +1,5 @@
   table{
     border: 1em
   }
-  td,tr{  border: 1em}
+  td,tr{  border: 1em;font: small}
   th{background-color:gray }  
