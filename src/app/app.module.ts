@@ -5,12 +5,22 @@ import { AppComponent } from './app.component';
 import { MyFilterPipe } from './myfilter.pipe';
 import { GetJsonServiceService } from './get-json-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NWeekComponent } from './n-week/n-week.component';
+import { NMonthComponent } from './n-month/n-month.component';
+import { NDayComponent } from './n-day/n-day.component';
+import { NQuarterComponent } from './n-quarter/n-quarter.component';
+import { NYearComponent } from './n-year/n-year.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    NWeekComponent,
+    NMonthComponent,
+    NDayComponent,
+    NQuarterComponent,
+    NYearComponent
   ],
   imports: [
     BrowserModule,HttpClientModule
