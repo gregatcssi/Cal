@@ -1,85 +1,90 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-4"></div>
+  <div class="row">
+    <div class="col-4"></div>
     <div class="col-4 text-center">
       <b>
         <i>
           <h1>{{DisplayYear}}</h1>
         </i>
       </b>
-  </div>
-  <div class="row-fluid">
+    </div>
+    <div class="row">
       <app-n-year></app-n-year>
     </div>
     <button (click)="BuildJson()">clean Data</button>
-    <div class="row">
+    <div class="container-fluid">
+      <div class="row">
         <div class="col-4"></div>
-    <div class="col-4 text-center">
-      <b>
-        <i>
-          <h1>{{DisplayYear}}</h1>
-        </i>
-      </b>
-  </div>
-</div>
-<div class="row">
-  <div class="col-1"></div>
-  <table class="col-4">    
-    <tr>
-        <th>QWeek</th>
-        <th>Week</th>
-        <th >Saturday</th>
-        <th>Sunday</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Month</th>
-      </tr>
-      <tr *ngFor="let item of Display.DisplayDates | myfilter:filterYear"><!---->
-      <td style="background: gray; border:1px solid">{{item.QWKS}}</td>
-      <td style="background:gray; border:1px solid">{{item.WKS}}</td>
-      <td [style.background]="item.DispSa" style="border: 1px solid">{{item.Saturday}}</td>
-      <td [style.background]="item.DispSu" style="border: 1px solid">{{item.Sunday}}</td>
-      <td [style.background]="item.DispMo" style="border: 1px solid">{{item.Monday}}</td>
-      <td [style.background]="item.DispTu" style="border: 1px solid">{{item.Tuesday}}</td>
-      <td [style.background]="item.DispWe" style="border: 1px solid">{{item.Wednesday}}</td>
-      <td [style.background]="item.DispTh" style="border: 1px solid">{{item.Thursday}}</td>
-      <td [style.background]="item.DispFr" style="border: 1px solid">{{item.Friday}}</td> 
-      <td style="border: 1px solid">{{item.Month}}</td>
-      </tr>
-  </table>
-  <div class="col-2"></div>
-  <table class="col-4">    
-      <tr>
-          <th>QWeek</th>
-          <th>Week</th>
-          <th >Saturday</th>
-          <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Month</th>
-        </tr>
-        <tr *ngFor="let item of Display.DisplayDates | myfilter:filterYear"><!---->
-        <td style="background: gray; border:1px solid">{{item.QWKS}}</td>
-        <td style="background:gray; border:1px solid">{{item.WKS}}</td>
-        <td [style.background]="item.DispSa" style="border: 1px solid">{{item.Saturday}}</td>
-        <td [style.background]="item.DispSu" style="border: 1px solid">{{item.Sunday}}</td>
-        <td [style.background]="item.DispMo" style="border: 1px solid">{{item.Monday}}</td>
-        <td [style.background]="item.DispTu" style="border: 1px solid">{{item.Tuesday}}</td>
-        <td [style.background]="item.DispWe" style="border: 1px solid">{{item.Wednesday}}</td>
-        <td [style.background]="item.DispTh" style="border: 1px solid">{{item.Thursday}}</td>
-        <td [style.background]="item.DispFr" style="border: 1px solid">{{item.Friday}}</td> 
-        <td style="border: 1px solid">{{item.Month}}</td>
-        </tr>
-  </table>
-   
-</div>
+        <div class="col-4 text-center">
+          <b>
+            <i>
+              <h1>{{DisplayYear}}</h1>
+            </i>
+          </b>
+        </div>
+      </div>
+      <div class="row">
+        <table class="col-4">
+          <tr>
+            <th>Quarter</th>
+            <th>QWeek</th>
+            <th>Week</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Month</th>
+          </tr>
+          <tr *ngFor="let item of Display.DisplayDates | myfilter:filterYear">
+            <!---->
+            <td style="background:lightblue; border:1px solid">{{item.Quarter}}</td>
+            <td style="background: gray; border:1px solid">{{item.QWKS}}</td>
+            <td style="background:gray; border:1px solid">{{item.WKS}}</td>
+            <td [style.background]="item.DispSa" style="border: 1px solid">{{item.Saturday}}</td>
+            <td [style.background]="item.DispSu" style="border: 1px solid">{{item.Sunday}}</td>
+            <td [style.background]="item.DispMo" style="border: 1px solid">{{item.Monday}}</td>
+            <td [style.background]="item.DispTu" style="border: 1px solid">{{item.Tuesday}}</td>
+            <td [style.background]="item.DispWe" style="border: 1px solid">{{item.Wednesday}}</td>
+            <td [style.background]="item.DispTh" style="border: 1px solid">{{item.Thursday}}</td>
+            <td [style.background]="item.DispFr" style="border: 1px solid">{{item.Friday}}</td>
+            <td style="border: 1px solid">{{item.Month}}</td>
+          </tr>
+        </table>
+        <div class="col-2"></div>
+        <table class="col-4">
+          <tr>
+            <th>Quarter</th>
+            <th>QWeek</th>
+            <th>Week</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Month</th>
+          </tr>
+          <tr *ngFor="let item of Display.DisplayDates | myfilter:filterYear">
+            <!---->
+            <td style="background:lightblue; border:1px solid">{{item.Quarter}}</td>
+            <td style="background: gray; border:1px solid">{{item.QWKS}}</td>
+            <td style="background:gray; border:1px solid">{{item.WKS}}</td>
+            <td [style.background]="item.DispSa" style="border: 1px solid">{{item.Saturday}}</td>
+            <td [style.background]="item.DispSu" style="border: 1px solid">{{item.Sunday}}</td>
+            <td [style.background]="item.DispMo" style="border: 1px solid">{{item.Monday}}</td>
+            <td [style.background]="item.DispTu" style="border: 1px solid">{{item.Tuesday}}</td>
+            <td [style.background]="item.DispWe" style="border: 1px solid">{{item.Wednesday}}</td>
+            <td [style.background]="item.DispTh" style="border: 1px solid">{{item.Thursday}}</td>
+            <td [style.background]="item.DispFr" style="border: 1px solid">{{item.Friday}}</td>
+            <td style="border: 1px solid">{{item.Month}}</td>
+          </tr>
+        </table>
 
-</div>
+      </div>
+    </div>
+
+  </div>
