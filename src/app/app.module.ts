@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { MyFilterPipe } from './myfilter.pipe';
-import { GetJsonServiceService } from './get-json-service.service';
+import { AppComponent } from './app-component/app.component';
+import { MyFilterPipe } from './pipes/myfilter.pipe';
+import { GetJsonServiceService } from './Services/get-json-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NWeekComponent } from './n-week/n-week.component';
 import { NMonthComponent } from './n-month/n-month.component';

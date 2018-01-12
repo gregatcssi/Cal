@@ -1,16 +1,4 @@
 <div class="container">
-  <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4 text-center">
-      <b>
-        <i>
-          <h1>{{DisplayYear}}</h1>
-        </i>
-      </b>
-    </div>
-    <div class="row">
-      <app-n-year></app-n-year>
-    </div>
     <button (click)="BuildJson()">clean Data</button>
     <div class="container-fluid">
       <div class="row">
@@ -39,7 +27,6 @@
             <th>Month</th>
           </tr>
           <tr *ngFor="let item of Display.DisplayDates | myfilter:filterYear">
-            <!---->
             <td style="background:lightblue; border:1px solid">{{item.Quarter}}</td>
             <td style="background: gray; border:1px solid">{{item.QWKS}}</td>
             <td style="background:gray; border:1px solid">{{item.WKS}}</td>
@@ -86,5 +73,18 @@
 
       </div>
     </div>
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4 text-center">
+      <b>
+        <i>
+          <h1>{{DisplayYear}}</h1>
+        </i>
+      </b>
+    </div>
+    <div class="row">
+      <app-n-year></app-n-year>
+    </div>
+   
 
   </div>
